@@ -62,6 +62,7 @@
   text-align: center;
 }
 
+
 .gallery-section h2 {
   font-size: 2rem;
   color: #8b4513;
@@ -83,4 +84,11 @@
 .gallery-grid img:hover {
   transform: scale(1.07);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.rgrc_98b54368.rgrc_2a7f98ee:hover {
+    color: var(--rg-color-link-hover, #003B8F);
+    animation: rgrc_9beb7cc5 .3s 
+cubic-bezier(0, 0, .2, 1);
 }

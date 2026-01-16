@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="footer-copy">© {new Date().getFullYear()} Ram Mandir Seva | All Rights Reserved</p>
+      <p className="footer-copy">© {new Date().getFullYear()} Ram Mandir Raipur | All Rights Reserved , Developed By Naman Jain</p>
     </footer>
   );
 };
