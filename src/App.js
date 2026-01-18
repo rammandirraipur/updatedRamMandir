@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
-import DonationForm from "./components/DonationForm";
+// import DonationForm from "./components/DonationForm";
 import Footer from "./components/Footer";
 import "./App.css";
 import BowCursor from "./CursorEffect";
@@ -22,7 +22,7 @@ function App() {
       <Gallery />
         <BlogSection /> 
             <LiveAarti /> 
-      <DonationForm />
+      {/* <DonationForm /> */}
       <Footer />
     </>
   );

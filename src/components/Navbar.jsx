@@ -36,12 +36,12 @@ const Navbar = () => {
         <a href="#contactInfo" className="nav-link" onClick={closeMenu}>
           Contact
         </a>
-<a href="#donation" className="nav-link donate-btn" onClick={closeMenu}>
+{/* <a href="#donation" className="nav-link donate-btn" onClick={closeMenu}>
   <span className="donate-icon">
     <FaOm />
   </span>
   <b>DONATE</b>
-</a>
+</a> */}
       </div>
       <div className="hamburger" id="hamburger" onClick={toggleMenu}>
         {isOpen ? <FaTimes /> : <FaBars />}
