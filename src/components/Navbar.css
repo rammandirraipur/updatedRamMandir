@@ -3,107 +3,114 @@
 =========================== */
 .navbar {
   display: flex;
-  justify-content: space-between;  /* Logo left, links right */
+  justify-content: space-between; /* Logo left, links right */
   align-items: center;
-  background: linear-gradient(to right, #8b4513, #d97706);
-  padding: 12px 30px;
+  background: linear-gradient(90deg, #a25e0b, #d68814); /* Slightly lighter gradient */
+  padding: 14px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* stronger shadow */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s ease;
 }
 
 /* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.6rem;
+  gap: 14px;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: #f1c27d;           /* space between logo image and text */
+  color: #f7d27f; /* Slightly brighter */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.07);
+  color: #fff2cc;
 }
 
 .nav-logo img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
   border-radius: 50%;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.4)); /* subtle shadow for clarity */
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
-  align-items: center;  /* vertically align links */
+  align-items: center;
+  gap: 18px; /* more spacing */
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links button {
   text-decoration: none;
-  color: #fff5e1;
+  color: #fff9e6; /* lighter text */
   font-weight: 600;
-  padding: 5px 14px;   /* Increase clickable area */
-  border-radius: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  user-select: non
+  padding: 8px 20px;
+  border-radius: 28px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav-links a:hover,
-.nav-links a:focus {
-  background-color: #eb0909d0; /* bright red */
-
-  outline: none;
-  cursor: pointer;
+.nav-links button:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* soft white hover */
+  color: #ffeb99; /* warm yellow */
+  transform: scale(1.07);
+  box-shadow: 0 0 8px rgba(255, 235, 153, 0.7);
 }
 
-/* DONATE Button */
+/* Donate Button */
 .donate-btn {
   display: inline-flex;
   align-items: center;
-  padding: 5px 14px;
-  box-shadow: 0 4px 12px rgba(243, 47, 40, 0.548);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  user-select: none;
-  text-decoration: none;
+  gap: 10px;
+  background-color: #e65100; /* vibrant orange */
+  padding: 8px 22px;
+  border-radius: 28px;
+  box-shadow: 0 5px 16px rgba(230, 81, 0, 0.7);
+  color: #fff;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .donate-btn:hover {
-  transform: scale(1.05);
+  background-color: #ff6d00;
+  transform: scale(1.1);
+  box-shadow: 0 7px 22px rgba(255, 109, 0, 0.85);
 }
 
-.donate-btn b {
-  color: white;
-  font-weight: 700;
+/* User greeting text */
+.user-greet {
+  font-weight: 600;
+  color: #fff9e6;
+  margin-right: 12px;
   font-size: 1.1rem;
-  letter-spacing: 1px;
-  margin-left: 8px; /* reduce space */
-}
-
-/* Circular white background for icon */
-.donate-icon {
-  background-color: white;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-}
-
-/* Style the icon inside the circle */
-.donate-icon svg {
-  color: #c86c09;
-  width: 20px;
-  height: 20px;
+  user-select: none;
 }
 
 /* Hamburger Icon */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
-  color: #fff;
+  font-size: 2rem;
+  color: #fff9e6;
   cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.15);
+  color: #ffeb99;
 }
 
 /* ===========================
@@ -113,20 +120,37 @@
 
   .nav-links {
     position: absolute;
-    top: -50em;                  /* Hidden initially */
+    top: -110vh; /* Hidden initially */
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: linear-gradient(to bottom, #8b4513, #d97706);
+    background: linear-gradient(to bottom, #a25e0b, #d68814);
     text-align: center;
-    transition: top 0.4s ease-in-out;
-    padding: 20px 0;
-    border-radius: 0 0 10px 10px;
-    gap: 15px;
+    transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 25px 0;
+    border-radius: 0 0 12px 12px;
+    gap: 20px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
   }
 
   .nav-links.active {
-    top: 61px;
+    top: 90px; /* Position below navbar */
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 1.3rem;
+    padding: 14px 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .nav-links a:hover,
+  .nav-links button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff6b3;
+    transform: none;
+    box-shadow: none;
   }
 
   .hamburger {
@@ -134,16 +158,86 @@
   }
 
   .nav-logo {
-    font-size: 1.3rem;
-    gap: 8px;
+    font-size: 1.5rem;
+    gap: 10px;
   }
 
   .nav-logo img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* User dropdown container */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button that toggles dropdown */
+.user-toggle {
+  background: none;
+  border: none;
+  color: #fff9e6;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.user-toggle:hover,
+.user-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Dropdown menu */
+.user-menu {
+  position: absolute;
+  top: 79px;
+  right: 0;
+  background: linear-gradient(180deg, #a25e0b, #d68814);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2000;
+}
+
+/* Dropdown items */
+.user-menu-item {
+  background: none;
+  border: none;
+  color: #fff9e6;
+  padding: 10px 18px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.user-menu-item:hover,
+.user-menu-item:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+/* Make sure the dropdown is accessible on mobile */
+@media (max-width: 768px) {
+  .user-menu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    min-width: auto;
   }
 
-  .nav-links a {
-    font-size: 1.1rem;
+  .user-menu-item {
+    padding: 12px 0;
+    font-size: 1.2rem;
   }
 }

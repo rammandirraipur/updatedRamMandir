@@ -1,0 +1,92 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #f9f5f0, #fef3e4);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
+  width: 320px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 12px 32px rgba(249, 115, 22, 0.35);
+}
+
+h1 {
+  color: #d97706; /* warm orange */
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.user-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #8b4513;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b4c27;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logout-btn,
+.switch-btn {
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(217, 115, 22, 0.35);
+}
+
+.logout-btn {
+  background-color: #d97706;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #b55c03;
+  box-shadow: 0 6px 18px rgba(181, 92, 3, 0.55);
+}
+
+.switch-btn {
+  background-color: #f3f4f6;
+  color: #8b4513;
+  border: 2px solid #d97706;
+}
+
+.switch-btn:hover {
+  background-color: #d97706;
+  color: white;
+  box-shadow: 0 6px 18px rgba(217, 115, 22, 0.55);
+}
