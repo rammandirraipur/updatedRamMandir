@@ -20,8 +20,9 @@ html, body {
   align-items: center;
   background: linear-gradient(90deg, #a25e0b, #d68814);
   padding: 14px 40px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  min-width: 100%;
   z-index: 1000;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
