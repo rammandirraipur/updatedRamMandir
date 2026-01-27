@@ -184,7 +184,7 @@ html, body {
   /* Mobile Menu */
   .nav-links {
     position: fixed;
-    top: 60px;
+    top: 7%;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
