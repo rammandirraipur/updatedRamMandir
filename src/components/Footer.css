@@ -114,7 +114,11 @@
   font-size: 0.8rem;
   color: #fff;
 }
-
+.footer-copy a{
+    margin-top: 10px;
+  font-size: 0.8rem;
+  color: #fff;
+}
 /* ================================
    MOBILE RESPONSIVE
 ================================ */

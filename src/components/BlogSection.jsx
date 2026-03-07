@@ -36,7 +36,7 @@ const blogPosts = [
     description:
       "छत्तीसगढ़ में भगवान श्रीराम को ‘भांजा’ मानने की परंपरा प्राचीन कौशल प्रदेश और माता कौशल्या से जुड़ी है। त्योहारों पर भांजे का सम्मान करना इसी दिव्य संबंध की स्मृति है।",
     extraInfo: {
-      author: "Yogesh Dandwate",
+      author: "admin",
       date: "2025-12-01",
       category: "Culture",
     },
