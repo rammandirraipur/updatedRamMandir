@@ -18,7 +18,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/shreerammandir214?utm_source=qr&igsh=MTgwa3Bubndmem8xaA==" target="_blank"><FontAwesomeIcon icon={faInstagram} /> Instagram</a>
         <a href="https://www.youtube.com/live/JB3OC5wFKDA?si=W1ckSEEWALMnkLIx" target="_blank"><FontAwesomeIcon icon={faYoutube} /> YouTube</a>
         <a href="https://www.facebook.com/share/1BMXaCL3G3/?mibextid=wwXIfr" target="_blank"><FontAwesomeIcon icon={faFacebook} /> Facebook</a>
-        <a href="mailto:rammandirraipur@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> Email</a>
+        <a href="mailto:shreerammandir214@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> Email</a>
       </div>
 
       <div className="contact-numbers">
@@ -28,15 +28,15 @@ const Footer = () => {
         </div>
         <div className="contact-box">
           <p><strong>Mandir Prabandhak (Umesh Shukla)</strong></p>
-          <p>+91 8720040199</p>
+          <p>+91 8720041099</p>
         </div>
         <div className="contact-box">
           <p><strong>Mandir Pradhan Pujari (Hanumanth Ji)</strong></p>
-          <p>+91 7000932687</p>
+          <p>+91 7000923697</p>
         </div>
         <div className="contact-box">
           <p><strong>Mandir Landline</strong></p>
-          <p>+91 7117406118</p>
+          <p>+91 07714061118</p>
         </div>
       </div>
 
