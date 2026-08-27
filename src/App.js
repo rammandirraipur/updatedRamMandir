@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import DarshanTimingPage from "./components/DarshanTimingPage";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -28,12 +28,15 @@ function App() {
           element={
             <>
               <Home />
-              <About />
-              <Gallery />
-              <BlogSection />
-              <LiveAarti />
-              <DonationForm />
-              <Footer />
+<About />
+<Gallery />
+<DarshanTimingPage />
+
+<BlogSection />
+
+<LiveAarti />
+<DonationForm />
+<Footer />
             </>
           }
         />

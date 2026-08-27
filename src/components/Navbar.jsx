@@ -60,6 +60,7 @@ const Navbar = () => {
         <button className="nav-link" onClick={() => handleNavClick("about")}>About</button>
         <button className="nav-link" onClick={() => handleNavClick("gallery")}>Gallery</button>
         <button className="nav-link" onClick={() => handleNavClick("blog")}>Blogs</button>
+        <button className="nav-link" onClick={() => handleNavClick("DarshanTimingPage")}>Darshan Timing</button>
         <button className="nav-link" onClick={() => handleNavClick("livearti")}>Live Aarti</button>
         <button className="nav-link" onClick={() => handleNavClick("contactInfo")}>Contact</button>
 
