@@ -1,30 +1,108 @@
-/* Gallery Grid */
+/* Gallery Section */
+.gallery-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #fff1d6, #ffe8b5);
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  color: #8b4513;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px #f1c27d;
+}
+
+/* Gallery Grid - Desktop */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.gallery-grid img {
-  height: 220px;
-}
-
-/* Mobile Layout - Adjust image height */
-@media (max-width: 480px) {
-  .gallery-grid img {
-    height: 180px;
-  }
-}
-
-/* Default desktop layout stays the same */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 250px));
+  justify-content: center;
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid #f1c27d;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff8ec;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-item .zoom-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item:hover .zoom-hint {
+  opacity: 1;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  color: #fff;
+  margin-top: 14px;
+  font-size: 1rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* Mobile Horizontal Scroll */
@@ -34,61 +112,30 @@
     overflow-x: auto;
     gap: 15px;
     padding-bottom: 10px;
-    scroll-snap-type: x mandatory; /* Ensures smooth snap scrolling */
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
   }
 
-  .gallery-grid img {
-    flex: 0 0 250px; /* Flex basis of 250px */
+  .gallery-item {
+    flex: 0 0 220px;
+  }
+
+  .gallery-item img {
     height: 200px;
-    border-radius: 10px;
-    scroll-snap-align: center; /* Centers images during scrolling */
   }
 
-  /* Custom scrollbar style */
   .gallery-grid::-webkit-scrollbar {
     height: 8px;
   }
 
   .gallery-grid::-webkit-scrollbar-thumb {
-    background: #d39d4a; /* Set thumb color */
+    background: #d39d4a;
     border-radius: 10px;
   }
 }
 
-/* Gallery Section Styles */
-.gallery-section {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #fff1d6, #ffe8b5);
-  text-align: center;
-}
-
-
-.gallery-section h2 {
-  font-size: 2rem;
-  color: #8b4513;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px #f1c27d;
-}
-
-/* Image Styles for the Gallery */
-.gallery-grid img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid #f1c27d;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-
-.rgrc_98b54368.rgrc_2a7f98ee:hover {
-    color: var(--rg-color-link-hover, #003B8F);
-    animation: rgrc_9beb7cc5 .3s 
-cubic-bezier(0, 0, .2, 1);
+@media (max-width: 480px) {
+  .gallery-item img {
+    height: 180px;
+  }
 }

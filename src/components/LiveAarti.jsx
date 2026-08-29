@@ -3,17 +3,18 @@ import "./livearti.css";
 
 const LiveAarti = () => {
   // ======= CONFIG =======
-  const liveStartHour = 19; // 7 PM
-  const liveStartMinute = 0;
-  const liveEndHour = 19; // 7:30 PM
-  const liveEndMinute = 30;
+  const liveStartHour = 19; // 7:30 PM
+  const liveStartMinute = 30;
+  const liveEndHour = 20; // 8:00 PM
+  const liveEndMinute = 0;
 
   // YouTube channel /live URL
-  const liveURL = "https://www.youtube.com/channel/UCJlpMH0sntPikQ8ksnbpxtg/live";
+  const liveURL =
+    "https://www.youtube.com/channel/UCJlpMH0sntPikQ8ksnbpxtg/live";
 
   // ======= STATE =======
   const [currentTime, setCurrentTime] = useState(new Date());
-  
+
   // Update current time every second
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -23,9 +24,11 @@ const LiveAarti = () => {
   // Convert times to minutes since midnight
   const startTime = liveStartHour * 60 + liveStartMinute;
   const endTime = liveEndHour * 60 + liveEndMinute;
-  const nowMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
+  const nowMinutes =
+    currentTime.getHours() * 60 + currentTime.getMinutes();
 
-  const isAartiTime = nowMinutes >= startTime && nowMinutes <= endTime;
+  const isAartiTime =
+    nowMinutes >= startTime && nowMinutes < endTime;
 
   // Countdown before Aarti
   const countdownMinutes = startTime - nowMinutes;
@@ -50,20 +53,20 @@ const LiveAarti = () => {
           </a>
         ) : countdownMinutes > 0 ? (
           <div className="offline-message">
-            ⏳ Aarti will start in {countdownMinutes} min {countdownSeconds} sec.
+            ⏳ Aarti will start in {countdownMinutes} min{" "}
+            {countdownSeconds} sec.
           </div>
         ) : (
           <div className="offline-message">
-            🔔 Aarti has ended. Please come back tomorrow at 7 PM.
+            🔔 Aarti has ended. Please come back tomorrow at 7:30 PM.
           </div>
         )}
       </div>
 
       <p className="aarti-caption">
-        Experience the divine Ram Mandir Aarti live from Raipur between 7:00 PM to 7:30 PM.
+        Experience the divine Ram Mandir Aarti live from Raipur between
+        7:30 PM to 8:00 PM.
       </p>
-
-      
     </section>
   );
 };
